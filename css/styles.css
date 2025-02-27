@@ -1,0 +1,149 @@
+@import url("reset.css");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-family: "Roboto", serif;
+}
+
+body{
+    background-color: #F5EFED;
+    /* overflow: hidden; */
+}
+
+.todos-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* flex-direction: column; */
+    gap: 100px;
+    width: 60vw;
+    /* height: 100vh; */
+    flex-wrap: wrap;
+    margin: 2rem;
+}
+.add-todo-wrapper{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+.add-todo-wrapper form{
+    display: flex;
+    flex-direction: column;
+    max-width: 40vw;
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+}
+
+.todo{
+    background-color: white;
+    opacity: 0;
+    max-width: calc(100vw/3);
+    padding: 1em;
+    border-radius: 0.5em;
+
+    transition: background-color 0.5s ease-in-out;
+
+    & > p{
+        font-size: 1.5rem;
+    }
+    animation: SlideIn 0.3s cubic-bezier(.71,.2,.63,1.43) 0s 1 forwards;
+}
+
+.todo-done{
+    background-color: green;
+    
+}
+
+.todo-remove{
+    background-color: red;
+    border-radius: 0.5em;
+    
+}
+
+button{
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+}
+
+#text{
+    width: 200px;
+    max-height: 20vh;
+    min-height: 10vh;
+    height: 90px;
+    border: 1px solid rgba(128, 0, 128, 0.514);
+    border-radius: 0.5rem;
+    margin: 5px 0;
+}
+#text:focus{
+    outline: 0.5px solid rgba(128, 0, 128, 0.514);
+    border-radius: 0.5rem;
+
+}
+
+.text-label{
+    color: rgba(1, 1, 124, 0.705);
+    font-size: 2rem;
+    margin: 0.5em 0;
+}
+.status{
+    accent-color: green;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+    margin: 5px;
+    margin-right: 15px;
+}
+
+.todo-add{
+    background-color: rgba(0, 128, 0, 0.178);
+    color: #2B2D42;
+    font-weight: bold;
+    /* font-weight: bold; */
+    border-radius: 2em 0.5em;
+    padding: 0.7em;
+    
+}
+
+
+.done{
+    background-color: rgba(57, 179, 57, 0.897);
+    border-radius: 0.5em;
+    
+    & > p{
+        color: white;
+        font-size: 1.5rem;
+    }
+}
+
+
+
+.tasks-statistics{
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    padding: 1rem;
+    color: green;
+}
+.date{
+    color: #2292A4;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin-left: 5rem;
+}
+
+@keyframes SlideIn {
+    from{
+        transform: translateX(200%);
+        opacity: 0;
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
