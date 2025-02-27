@@ -90,6 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 todoForm.addEventListener("submit", (e) => {
   e.preventDefault();
+  doneTasks = 0;
   const text = textArea.value;
   console.log(text);
   create(text).then((res) => {
